@@ -3,7 +3,7 @@
 
 const scriptsInEvents = {
 
-		async Game_Event12_Act1(runtime, localVars)
+		async Game_Event39_Act2(runtime, localVars)
 		{
 			function getParameterByName1(name, url = window.location.href) {
 			    name = name.replace(/[\[\]]/g, '\\$&');
