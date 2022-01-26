@@ -3,7 +3,7 @@
 
 const scriptsInEvents = {
 
-		async EventSheet1_Event13_Act1(runtime, localVars)
+		async EventSheet1_Event18_Act1(runtime, localVars)
 		{
 			function getParameterByName1(name, url = window.location.href) {
 			    name = name.replace(/[\[\]]/g, '\\$&');

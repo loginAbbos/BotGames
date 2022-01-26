@@ -4005,14 +4005,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.IsOnScreen,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
-		C3.ScriptsInEvents.EventSheet1_Event13_Act1,
-		C3.Plugins.System.Acts.WaitForPreviousActions,
 		C3.Plugins.System.Acts.RestartLayout,
 		C3.Plugins.AJAX.Cnds.OnAnyError,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Text.Acts.SetText,
-		C3.Plugins.System.Cnds.OnLayoutStart
+		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.ScriptsInEvents.EventSheet1_Event18_Act1
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4037,6 +4036,7 @@ self.C3_JsPropNameTable = [
 	{score: 0},
 	{high_score_txt: 0},
 	{AJAX: 0},
+	{gameover: 0},
 	{Family1: 0},
 	{Variable1: 0},
 	{Collision: 0},
