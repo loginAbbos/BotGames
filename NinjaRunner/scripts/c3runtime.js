@@ -4011,7 +4011,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.OnLayoutStart,
-		C3.ScriptsInEvents.EventSheet1_Event18_Act1
+		C3.ScriptsInEvents.EventSheet1_Event18_Act1,
+		C3.Plugins.Touch.Cnds.OnDoubleTapGesture
 	];
 };
 self.C3_JsPropNameTable = [

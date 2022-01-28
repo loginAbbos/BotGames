@@ -3,7 +3,7 @@
 
 const scriptsInEvents = {
 
-		async Game_Event18_Act1(runtime, localVars)
+		async Game_Event12_Act2(runtime, localVars)
 		{
 			function getParameterByName1(name, url = window.location.href) {
 			    name = name.replace(/[\[\]]/g, '\\$&');
@@ -36,10 +36,6 @@ const scriptsInEvents = {
 			    played_time: runtime.gameTime,
 			};
 			
-			fetchApi();
-			
-			function fetchApi() {
-			
 			fetch('https://gamerooms.uz/api/v1/user/score/',{
 			    method:'PUT',
 			    headers:{
@@ -52,10 +48,6 @@ const scriptsInEvents = {
 			// this is the data we get after putting our data,
 			console.log(data)
 			);
-			return 1;
-			}
-			
-			
 		}
 
 };

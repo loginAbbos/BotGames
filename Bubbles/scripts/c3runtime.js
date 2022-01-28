@@ -4211,6 +4211,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Behaviors.Timer.Acts.StartTimer,
 		C3.Plugins.LocalStorage.Acts.CheckItemExists,
+		C3.Plugins.Sprite.Acts.SetCollisions,
 		C3.Plugins.LocalStorage.Cnds.OnItemExists,
 		C3.Plugins.LocalStorage.Acts.GetItem,
 		C3.Plugins.System.Acts.WaitForPreviousActions,
@@ -4223,7 +4224,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.MoveTo.Acts.MoveToPosition,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.System.Cnds.Compare,
-		C3.Plugins.Sprite.Acts.SetCollisions,
+		C3.ScriptsInEvents.Game_Event12_Act2,
 		C3.Plugins.Touch.Cnds.IsInTouch,
 		C3.Plugins.Sprite.Acts.SetAngle,
 		C3.Plugins.Touch.Exps.X,
@@ -4236,7 +4237,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Bullet.Acts.SetEnabled,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.System.Acts.Wait,
-		C3.ScriptsInEvents.Game_Event18_Act1,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.System.Cnds.PickByComparison,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
@@ -4248,6 +4248,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Dictionary.Acts.Clear,
 		C3.Plugins.Dictionary.Exps.KeyCount,
 		C3.Plugins.Sprite.Cnds.OnDestroyed,
+		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.LocalStorage.Acts.SetItem,
 		C3.Plugins.Sprite.Acts.Destroy,
@@ -4283,7 +4284,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.Dictionary.Exps.CurrentKey,
 		C3.Plugins.Particles.Acts.SetEffectParam,
-		C3.Plugins.System.Exps.rgbex255
+		C3.Plugins.System.Exps.rgbex255,
+		C3.Plugins.Sprite.Acts.SetEffectEnabled,
+		C3.Plugins.Sprite.Acts.SetHeight
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4331,6 +4334,8 @@ self.C3_JsPropNameTable = [
 	{Particles: 0},
 	{help_text: 0},
 	{AJAX: 0},
+	{limit1: 0},
+	{limit2: 0},
 	{Bullet: 0},
 	{Bubbles: 0},
 	{CURRENT_ANGLE: 0},
@@ -4342,6 +4347,7 @@ self.C3_JsPropNameTable = [
 	{NEXT_OFFSET: 0},
 	{SCORE: 0},
 	{BEST_SCORE: 0},
+	{gameover: 0},
 	{return_value: 0},
 	{uid: 0},
 	{x: 0},
@@ -4513,7 +4519,7 @@ self.C3_ExpressionFuncs = [
 			return () => C3.toDegrees(C3.angleTo(n0.ExpObject(), n1.ExpObject(), f2(), f3()));
 		},
 		() => "LAUNCHED",
-		() => 0.5,
+		() => 1.6,
 		() => "Bubble",
 		p => {
 			const n0 = p._GetNode(0);
@@ -4668,7 +4674,9 @@ self.C3_ExpressionFuncs = [
 			const f9 = p._GetNode(9).GetBoundMethod();
 			const f10 = p._GetNode(10).GetBoundMethod();
 			return () => ((((n0.ExpInstVar_Family()) === ("bubble_blue") ? 1 : 0)) ? (f1(30, 167, 225)) : (((((n2.ExpInstVar_Family()) === ("bubble_red") ? 1 : 0)) ? (f3(200, 62, 62)) : (((((n4.ExpInstVar_Family()) === ("bubble_green") ? 1 : 0)) ? (f5(128, 190, 31)) : (((((n6.ExpInstVar_Family()) === ("bubble_orange") ? 1 : 0)) ? (f7(232, 106, 31)) : (((((n8.ExpInstVar_Family()) === ("bubble_pink") ? 1 : 0)) ? (f9(255, 153, 203)) : (f10(255, 204, 1)))))))))));
-		}
+		},
+		() => "Particles",
+		() => 1200
 ];
 
 
