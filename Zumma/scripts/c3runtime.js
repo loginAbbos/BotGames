@@ -3868,7 +3868,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Exps.Count,
 		C3.Plugins.System.Acts.AddVar,
-		C3.Plugins.System.Cnds.Repeat,
+		C3.Plugins.System.Cnds.CompareBoolVar,
+		C3.Plugins.System.Cnds.PickLastCreated,
+		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
@@ -3885,7 +3887,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Exps.IID,
 		C3.Plugins.System.Cnds.PickNth,
 		C3.Plugins.Sprite.Cnds.PickInstVarHiLow,
-		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.System.Exps.max,
 		C3.Plugins.System.Exps.min,
 		C3.Plugins.System.Cnds.PickAll,
@@ -3896,20 +3897,22 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetPos,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Text.Acts.SetText,
+		C3.Plugins.Sprite.Acts.SetTowardPosition,
+		C3.Plugins.Mouse.Exps.X,
+		C3.Plugins.Mouse.Exps.Y,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.Sprite.Acts.SetAnimSpeed,
 		C3.Plugins.Touch.Cnds.OnTouchEnd,
-		C3.Plugins.System.Cnds.CompareBoolVar,
 		C3.Plugins.Sprite.Acts.Spawn,
 		C3.Plugins.Sprite.Acts.SetSize,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Touch.Cnds.IsInTouch,
-		C3.Plugins.Sprite.Acts.SetTowardPosition,
 		C3.Plugins.Touch.Exps.X,
 		C3.Plugins.Touch.Exps.Y,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.PickByComparison,
 		C3.Plugins.Sprite.Acts.AddChild,
+		C3.Plugins.Sprite.Cnds.IsOutsideLayout,
 		C3.Plugins.System.Exps.layoutheight,
 		C3.Plugins.Spritefont2.Acts.SetScale,
 		C3.Plugins.Spritefont2.Acts.TypewriterText,
@@ -4111,7 +4114,7 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
 		},
-		() => 600,
+		() => 1,
 		() => "Layer 0",
 		() => -16,
 		p => {
@@ -4126,7 +4129,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
-		() => 1,
 		() => 2,
 		() => 3,
 		() => 4,
@@ -4264,11 +4266,13 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (f0() / 2);
 		},
+		() => 0.5,
 		() => "Game Over",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => (f0() - 80);
 		},
+		() => 0.25,
 		() => "try again",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
